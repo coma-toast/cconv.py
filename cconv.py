@@ -21,7 +21,8 @@ def printCoin(data):
     #for i in theJSON["market_cap"]:
     print json.dumps(theJSON, indent=2, separators=(',', ':'))
 
-    for i in
+    #try to print JUST the current type that is requested
+    #for i in ...???
 
 
 
