@@ -3,6 +3,7 @@
 
 import urllib2
 import json
+from pprint import pprint
 
 
 #import requests
@@ -14,15 +15,26 @@ import json
 #coinmarketcap = Market()
 #currencyType = "USD"
 #coinmarketcap.ticker(currencyType, limit=3, convert='EUR')
+
+
 def printCoin(data):
     theJSON = json.loads(data)
     #print theJSON
 
     #for i in theJSON["market_cap"]:
-    print json.dumps(theJSON, indent=2, separators=(',', ':'))
 
-    #try to print JUST the current type that is requested
+    #This works, but dumps ALL currencies:
+    #print json.dumps(theJSON, indent=2, separators=(',', ':'))
+
+    #try to print JUST the currency type that is requested
     #for i in ...???
+    #https://docs.python.org/2/library/json.html
+    #https://stackoverflow.com/questions/9093684/how-to-print-particular-json-value-in-python
+    for symbol in theJSON:
+        json.dumps({})
+
+    #This also works, but dumps all currencies in one big text block
+    print theJSON
 
 
 
@@ -35,7 +47,7 @@ def main():
         print "Connection successful."
     else:
         print "Received an error from server, cannot retrieve results " + str(webUrl.getcode())
-    #prompt user for coin
+    #prompt user for coin, currency
     coinReq = raw_input('What coin you want to see? ')
     curReq = raw_input('What currency type? ')
     #combine main URL with the coin name into one string
