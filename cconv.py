@@ -17,7 +17,7 @@ from pprint import pprint
 #coinmarketcap.ticker(currencyType, limit=3, convert='EUR')
 
 
-def printCoin(data):
+def printCoin(data, curReq):
     theJSON = json.loads(data)
     #print theJSON
 
@@ -36,7 +36,7 @@ def printCoin(data):
     #This also works, but dumps all currencies in one big text block
     #print theJSON
     print "Market Cap:"
-    print(theJSON['market_cap'])
+    print "$", (theJSON['market_cap'][curReq])
 
 
 
@@ -58,7 +58,7 @@ def main():
     webUrl2 = urllib2.urlopen(fullUrl)
     data = webUrl2.read()
     #print out data for the coin specified
-    printCoin(data)
+    printCoin(data, curReq)
     #print coinData
 
 
