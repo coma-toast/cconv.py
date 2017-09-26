@@ -30,11 +30,13 @@ def printCoin(data):
     #for i in ...???
     #https://docs.python.org/2/library/json.html
     #https://stackoverflow.com/questions/9093684/how-to-print-particular-json-value-in-python
-    for symbol in theJSON:
-        json.dumps({})
+    #for symbol in theJSON:
+    #    json.dumps({})
 
     #This also works, but dumps all currencies in one big text block
-    print theJSON
+    #print theJSON
+    print "Market Cap:"
+    print(theJSON['market_cap'])
 
 
 
