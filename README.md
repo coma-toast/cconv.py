@@ -1,2 +1,2 @@
 # cconv.py
-Basic cryptocurrency converter and price tracker
+Basic cryptocurrency converter and price tracker.
